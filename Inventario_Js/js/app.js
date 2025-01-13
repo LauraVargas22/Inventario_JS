@@ -37,4 +37,13 @@ const venderProducto = (cod, cantidadVendida) => {
     }
 }
 
-
+const comprarProducto = (cod, cantidadComprada) => {
+    if (inventario.has(cod)) {
+        const producto = inventario.get(cod);
+        const nuevaCantidad = producto.cantidad + cantidadComprada;
+        producto.cantidad = nuevaCantidad;
+        console.log(`Se han comprado ${cantidadComprada} unidades del producto ${inventario.get(cod).producto} ahora hay ${nuevaCantidad} unidades disponibles`)
+    } else {
+        console.log(`El codigo ${cod} ingresado no se encuentra`);
+    } 
+}

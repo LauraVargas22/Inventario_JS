@@ -47,3 +47,12 @@ const comprarProducto = (cod, cantidadComprada) => {
         console.log(`El codigo ${cod} ingresado no se encuentra`);
     } 
 }
+
+const totalizarInventario = () => {
+    let valorInventario = 0;
+    for (const [cod, producto] of inventario) {
+        const valorProducto = producto.cantidad * producto.valor;
+        valorInventario += valorProducto;
+    }
+    console.log(`El valor total de su inventario es de ${valorInventario}`)
+}
